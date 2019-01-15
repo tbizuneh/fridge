@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Smart Fridge</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<ul class="list-group fridge-list">
+					<li class="list-group-item new-item">
+						<form id="fridge-form">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <input class="new-item form-control" placeholder="Add an item" type="text" />
+                  </div>
+                  <div class="col-2">
+                    <button type="submit" class="btn btn-success">Add item to shopping-List</button>
+                  </div>
+                </div>
+              </div>
+						</form>
+		</li>
+		</ul>
+		</div>
+		</div>
+		
+		
+			<div class="row mt-4">
+				<div class="col-md-6 mt-4">
+					<div class="card border border-primary">
+						<div class="card-header bg-primary text-black">
+						 <h1>Shopping-list</h1>
+						</div>
+						<div id="shopping-List" class="card-body">
+									
+						</div>
+					</div>
+				</div>
+		
+				<div class="col-md-6 mt-4">
+					<div class="card devoured-card">
+						<div class="card-header text-black">
+						 <h1>Fridge-items</h1>
+						</div>
+						<div id="Fridge-items" class="card-body">
+								<button id="btnDefault" onclick="moveButton(this)" type="button">Tomato</button>
+								<button id="btnPrimary" onclick="moveButton(this)" type="button" >Cheese</button>
+								<button id="btnDanger" onclick="moveButton(this)" type="button">Milk</button>
+	  
+						</div>
+					</div>
+				</div>
+			</div>
+						<script>
+							function moveButton(elem){
+    if( $(elem).parent().attr("id") == "shopping-List" ){
+        $(elem).detach().appendTo('#Fridge-items');
+    }
+    else{
+        $(elem).detach().appendTo('#shopping-List'); 
+    }
+}
+
+						</script>						
+	<!-- Custom Script -->
+	<script src="js/fridge.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+
