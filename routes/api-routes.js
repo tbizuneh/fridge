@@ -28,8 +28,7 @@ module.exports = function(app) {
       });
   });
 
-  // DELETE route for deleting items. We can get the id of the items  to be deleted from
-  // req.params.id
+  
   app.delete("/api/fridges/:id", function(req, res) {
     
     db.Fridge.destroy({
@@ -41,26 +40,14 @@ module.exports = function(app) {
     });
 
   });
-  // app.move("/api/fridges/:id", function(req, res) {
-    
-  //   db.Fridge.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function(dbFridge) {
-  //     res.json(dbFridge);
-  //   });
-
-  // });
-
+  
   // updating fridges. 
   app.put("/api/fridges", function(req, res) {
 
     
     db.Fridge.update({
       item: req.body.item,
-      // quantity:  req.body.quantity,
-      complete: req.body.complete
+     
     }, {
       where: {
         id: req.body.id

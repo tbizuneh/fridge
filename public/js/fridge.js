@@ -99,6 +99,8 @@ $(document).ready(function() {
           
           "<li class='list-group-item fridge-item'>",
           "<span>",
+          fridge.id,
+          "-",
           fridge.item,
           "</span>",
           "<input type='text' class='edit' style='display: none;'>",
