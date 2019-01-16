@@ -6,6 +6,7 @@ $(document).ready(function() {
     var $fridgeitem = $("#Fridge-items")
     // Adding event listeners for deleting, editing, and adding items
     $(document).on("click", "button.delete", deleteFridge);
+    $(document).on("click", "button.move", moveFridge);
     $(document).on("click", ".fridge-item", editFridge);
     $(document).on("keyup", ".fridge-item", finishEdit);
     $(document).on("blur", ".fridge-item", cancelEdit);
@@ -49,7 +50,14 @@ $(document).ready(function() {
         url: "/api/fridges/" + id
       }).then(getFridges);
     }
-    
+    function moveFridge() {
+      event.stopPropagation();
+      var id = $(this).data("id");
+      $.ajax({
+        method: "DELETE",
+        url: "/api/fridges/" + id
+      }).then(getFridges);
+    }
   
     // This function handles showing the input box for a user to edit an item
     function editFridge() {
@@ -105,7 +113,7 @@ $(document).ready(function() {
           "</span>",
           "<input type='text' class='edit' style='display: none;'>",
           "<button class='delete btn btn-danger'>delete</button>",
-          "<button class='move btn btn-success'>Move</button>",
+          "<button class='move btn btn-success'>Move to Fridge</button>",
            "</li>"
         ].join("")
       );

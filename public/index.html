@@ -53,16 +53,23 @@
 						 <h1>Fridge-items</h1>
 						</div>
 						<div id="Fridge-items" class="card-body">
-								<button id="btnDefault" onclick="moveButton(this)" type="button">Tomato</button>
-								<button id="btnPrimary" onclick="moveButton(this)" type="button" >Cheese</button>
-								<button id="btnDanger" onclick="moveButton(this)" type="button">Milk</button>
+								<button id="btnDefault" onclick="move(this)" type="button">Tomato</button>
+								<button id="btnPrimary" onclick="move(this)" type="button" >Cheese</button>
+								<button id="btnDanger" onclick="move(this)" type="button">Milk</button>
+								<button id="btnDefault" onclick="move(this)" type="button">Yogurt</button>
+								<button id="btnPrimary" onclick="move(this)" type="button" >Eggs</button>
+								<button id="btnDanger" onclick="move(this)" type="button">Butter</button>
+								<button id="btnDefault" onclick="move(this)" type="button">Chicken</button>
+								<button id="btnPrimary" onclick="move(this)" type="button" >Tuna</button>
+								<button id="btnDanger" onclick="move(this)" type="button">Turkey</button>
+
 	  
 						</div>
 					</div>
 				</div>
 			</div>
 						<script>
-							function moveButton(elem){
+							function move(elem){
     if( $(elem).parent().attr("id") == "shopping-List" ){
         $(elem).detach().appendTo('#Fridge-items');
     }
